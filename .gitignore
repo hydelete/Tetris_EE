@@ -1,0 +1,21 @@
+.DS_Store
+desktop.ini
+
+# exclude certain directories
+/.wing/*
+/bin-debug/*
+/libs/*
+/promise/*
+/template/*
+
+/resource/*
+!/resource/default.res.json
+!/resource/config
+
+
+# exclude everything except manifest.json
+egretProperties.json
+favicon.ico
+index.html
+tsconfig.json
+wingProperties.json

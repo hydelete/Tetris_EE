@@ -1,0 +1,15 @@
+{
+	"groups": [
+		{
+			"keys": " checkbox_select_down_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		}
+	]
+}
