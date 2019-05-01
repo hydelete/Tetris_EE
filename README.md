@@ -9,4 +9,6 @@ Clone and copy all files to directory relatively.
 OK, run code in the IDE, have fun.  
 
 -----------
-Sorry for some bugs. beep beep
+Sorry for some bugs. beep beep  
+****  
+>  *"egret_version": "5.0.15"*.
