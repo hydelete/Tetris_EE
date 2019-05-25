@@ -4,11 +4,19 @@ Crafted by Egret Engine with TypeScript.
 
 How to use 
 -----------
-Create a new Game Project by Egret Wing.  
-Clone and copy all files to directory relatively.  
-OK, run code in the IDE, have fun.  
+* Create a new Game Project by Egret Wing.  
+* Copy and recover all files from repo to directory relatively.  
+* Run code in the IDE, have fun.  
+
+
+
+
+Extra library used 
+-----------
+KeyBoard evnent library from [Egret Game Library](https://github.com/egret-labs/egret-game-library)
+
 
 -----------
-Sorry for some bugs. beep beep  
+Sorry for those bugs. beep beep  
 ****  
 >  *"egret_version": "5.0.15"*.
