@@ -13,7 +13,7 @@ How to use
 
 Extra library used 
 -----------
-KeyBoard evnent library from [Egret Game Library](https://github.com/egret-labs/egret-game-library)
+KeyBoard event library from [Egret Game Library](https://github.com/egret-labs/egret-game-library)
 
 
 -----------
