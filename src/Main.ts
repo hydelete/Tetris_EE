@@ -31,15 +31,6 @@ class HDP {
 class HD_GamePlayer {
     // private context: egret.DisplayObjectContainer;
 
-    private case0(){
-        for(let i = 0; i < 8; ++i){
-            this.arr_fixed.push(1);
-        }
-
-        for(let i = 0; i < 2; ++i){
-            this.arr_fixed.push(0);
-        }        
-    }
 
     /**
      *      data struct desc: each block has index for position, more than that, lets marked it that hold 0 or 1 for per cell, if hold 1, show block, otherwise, hide block     
@@ -47,11 +38,10 @@ class HD_GamePlayer {
      */
     public initData4Test():void{
 
-        //case 1
-
-        for(let i = 0; i < 16; ++i){
-            // this.case0();
+        if(_G.checkDebugging()){
+            CaseFactory.build().case0(this.arr_fixed);
         }
+        
 
         // for(let i = 0; i < 6; ++i){
         //     this.arr_fixed.push(1);
@@ -235,7 +225,7 @@ class HD_GamePlayer {
     private shapeIndex = 0;
 
     private timeaddups = 0;
-    private timeaddupMax = 8;
+    private timeaddupMax = _G._GAME_SPEED;
 
 
 
@@ -261,7 +251,11 @@ class HD_GamePlayer {
     public randomNewShape(){
 
         this.shapeData = GameDataManager.getManager().getShapeDataByTypeId( _U.load().randomInt(GameDataManager.TYPE_T + 1) );
-        // this.shapeData = GameDataManager.getManager().getShapeDataByTypeId( GameDataManager.TYPE_I );
+
+        if(_G.checkDebugging()){
+            this.shapeData = GameDataManager.getManager().getShapeDataByTypeId( GameDataManager.TYPE_I );
+        }
+
         this.shapeIndex = 0;
     }
 
@@ -472,14 +466,14 @@ class HD_GamePlayer {
             let pos = this.getAbsPositionByShapedata(shpdata[i], shpdata[i + 1]);
             
             pCheckList.push(pos);
-            //find top yvalue of position belongs to the same column
+            //find top yvalue of position at the same column
 
         }
 
         let arr4Cols = [];
         let wid = this.getCurrentWidth();
 
-        let offsetHori = this.getShapeNow()[0];     //for vertical form of type I
+        let offsetHori = this.getShapeNow()[0];     //for vertical form of type I, commonly the value is 0
 
         if( wid <= 0 || wid > 4){
             console.log("error occurring in function instantFalldown()");
@@ -496,10 +490,15 @@ class HD_GamePlayer {
         
             if(this.arr_fixed[i] == 1){
                 let colNum = i % this.maxOneline;
+                let rowNum = Math.floor(i / this.maxOneline);
 
                 if(colNum >= (this.gridPosX + offsetHori) && colNum < (this.gridPosX + wid + offsetHori)){
 
-                    arr4Cols[colNum - this.gridPosX - offsetHori].push(i);
+
+                    if(rowNum < this.gridPosY){
+                        arr4Cols[colNum - this.gridPosX - offsetHori].push(i);
+                    }
+                    
 
                 }
             }

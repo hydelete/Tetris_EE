@@ -9,16 +9,25 @@ class _G{
     public static _CONTAINER_OFFSET_X = 0;
     public static _CONTAINER_OFFSET_Y = 0;
 
+
     public static _GAME_FRAME_RATE = 40;
+    public static _GAME_SPEED = 7;     // speed up if reduce, related to frame rate
     public static _GAME_SHAPE_BORN_POSITION = 23;
     public static _UNIT_SIDE_LENGTH:number = 42;
-    public static _MAX_GRIDS_A_LINE:number = 10;
+    public static _MAX_GRIDS_A_LINE:number = 11;
     public static _GAME_DESIGN_HEIGHT:number = 960;
     public static _GAME_DESIGN_WIDTH:number = 640;
     public static _GAME_COUNT_Y_GRID:number = Math.floor(_G._GAME_DESIGN_HEIGHT / _G._UNIT_SIDE_LENGTH);
     // public static _GAME_COUNT_X_GRID:number = Math.floor(_G._GAME_DESIGN_WIDTH / _G._UNIT_SIDE_LENGTH);
-    public static _DEBUG_MODE:boolean = true;
+    public static _DEBUG_MODE:boolean = false;
     public static _BLOCK_BORDER_SWITCH = 0;
+
+
+    public static checkDebugging(){
+
+        return this._DEBUG_MODE;
+        
+    }
 
     public static readDebugging(){
 
